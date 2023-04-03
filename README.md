@@ -12,19 +12,28 @@ To use `colors`, import the package and create an instance of the `Colors` struc
 ```go
 package main
 
-// import the `colors` package
 import (
 	"fmt"
+
 	"github.com/donuts-are-good/colors"
 )
 
 func main() {
-	// create a new instance of the "Colors" struct
-	c := &colors.Colors{}
+	// create a new instance of Colors
+	c := colors.Colors{}
 
-	// print the test string "This text is red." in red color using the "Red" color code and reset code "Nc" of the "Colors" struct
-	fmt.Println(c.Red + "This text is red." + c.Nc)
+	// print some colored text
+	fmt.Println(c.Red + "Hello, world!" + c.Nc)
+	fmt.Println(c.Green + "Welcome to the world of colors!" + c.Nc)
+	fmt.Println(c.BrightYellow + "This text is bright yellow!" + c.Nc)
+
+	// reset the colors
+	c.Reset()
+
+	// print some more text
+	fmt.Println(c.Purple + "Back to normal..." + c.Nc)
 }
+
 
 ```
 The Colors struct provides a set of color codes that can be used to format text. To color text, simply concatenate the desired color code with the text, and then concatenate the reset code c.Nc to reset the color.
