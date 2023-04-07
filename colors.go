@@ -26,13 +26,13 @@ type Colors struct {
 }
 
 var (
-	// c is a pointer to an instance of Colors
-	c *Colors
+	// C is a pointer to an instance of Colors
+	C *Colors
 )
 
 // init sets up the Colors struct with the corresponding escape codes for each color
 func init() {
-	c = &Colors{
+	C = &Colors{
 		Nc:            "\033[0m",
 		BrightBlack:   "\033[1;30m",
 		BrightRed:     "\033[1;31m",
@@ -53,23 +53,23 @@ func init() {
 	}
 	// if running on Windows, set all colors to an empty string to disable color
 	if runtime.GOOS == "windows" {
-		c.Nc = ""
-		c.BrightBlack = ""
-		c.BrightRed = ""
-		c.BrightGreen = ""
-		c.BrightYellow = ""
-		c.BrightPurple = ""
-		c.BrightMagenta = ""
-		c.BrightCyan = ""
-		c.BrightWhite = ""
-		c.Black = ""
-		c.Red = ""
-		c.Green = ""
-		c.Yellow = ""
-		c.Purple = ""
-		c.Magenta = ""
-		c.Cyan = ""
-		c.White = ""
+		C.Nc = ""
+		C.BrightBlack = ""
+		C.BrightRed = ""
+		C.BrightGreen = ""
+		C.BrightYellow = ""
+		C.BrightPurple = ""
+		C.BrightMagenta = ""
+		C.BrightCyan = ""
+		C.BrightWhite = ""
+		C.Black = ""
+		C.Red = ""
+		C.Green = ""
+		C.Yellow = ""
+		C.Purple = ""
+		C.Magenta = ""
+		C.Cyan = ""
+		C.White = ""
 	}
 }
 
