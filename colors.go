@@ -4,9 +4,9 @@ import (
 	"runtime"
 )
 
-// Variables containing ANSI codes
+// 16 ANSI colors, use NC to reset the color.
 var (
-	Nc            = "\033[0m"
+	NC            = "\033[0m"
 	BrightBlack   = "\033[1;30m"
 	BrightRed     = "\033[1;31m"
 	BrightGreen   = "\033[1;32m"
