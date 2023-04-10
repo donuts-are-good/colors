@@ -3,11 +3,11 @@
 
 # 🌈 Colors
 
-A delightful Go package to add a splash of color to your console applications! With support for 16 vibrant colors, you can easily brighten up your text output and give it more pizzazz! 
+A delightful Go package to add a splash of color to your console applications! With support for 24-bit hex colors, and text formatting options like bold, italic, and underline, you can easily brighten up your text output and give it more pizzazz!
 
 ## 🥳 Example
 
-```go
+```go 
 package main
 
 import (
@@ -16,9 +16,9 @@ import (
 )
 
 func main() {
-	fmt.Println(colors.BrightGreen + "'Oh, I beg your pardon!'" + colors.NC)
-	fmt.Println(colors.BrightYellow + "cried Alice hastily, afraid that she had hurt the poor animal's feelings." + colors.NC)
-	fmt.Println(colors.BrightCyan + "She found herself in a long, low hall, which was lit up by a row of lamps hanging from the roof." + colors.NC)
+	fmt.Println(colors.Bold + colors.BrightGreen + "'Oh, I beg your pardon!'" + colors.NC)
+	fmt.Println(colors.Italic + colors.BrightYellow + "cried Alice hastily, afraid that she had hurt the poor animal's feelings." + colors.NC)
+	fmt.Println(colors.Underline + colors.BrightCyan + "She found herself in a long, low hall, which was lit up by a row of lamps hanging from the roof." + colors.NC)
 	fmt.Println(colors.Magenta + "There were doors all round the hall," + colors.NC)
 	fmt.Println(colors.Red + "but they were all locked; and when Alice had been all the way down one side and up the other," + colors.NC)
 	fmt.Println(colors.BrightMagenta + "trying every door, she walked sadly down the middle, wondering how she was ever to get out again." + colors.NC)
@@ -37,10 +37,11 @@ func main() {
 }
 
 ```
-## 🍭 Available Colors
+## 🍭 Available Colors and Text Formatting
+
 **NOW!** Free eraser included! (`colors.NC`)
 
-**`colors` supports ~~8~~ 16 delicious shades of ANSI color!**
+**`colors` supports standard ANSI as well as 24bit hex color!**
 
 - Black  
 - Red    
@@ -51,17 +52,33 @@ func main() {
 - Cyan   
 - White  
 
-## 🎉 Now Available In BRIGHT COLORS! *
-**"Bright" colors only available at participating locations while supplies last*
+**Text Formatting Options:**
 
-- Bright Black  
-- Bright Red    
-- Bright Green  
-- Bright Yellow 
-- Bright Purple 
-- Bright Magenta
-- Bright Cyan   
-- Bright White 
+- Bold
+- Faint
+- Italic
+- Underline
+
+**Background Colors Too!**
+
+- BgBlack & BgBrightBlack
+- BgRed & BgBrightRed
+- BgGreen & BgBrightGreen
+- BgYellow & BgBrightYellow
+- BgBlue & BgBrightBlue
+- BgMagenta & BgBrightMagenta
+- BgCyan & BgBrightCyan
+- BgWhite & BgBrightWhite
+
+**24-bit Hex Color Support:**
+
+Use the `colors.Hex()` function to convert a hex color code to a 24-bit ANSI escape code. For example:
+
+```go
+colorMe := "Hello my shoes are a beautiful " + colors.Hex("ffeebb") + "off-white" + colors.NC + " color and the laces are " + colors.Hex("ab2f93") + "darker."
+
+fmt.Println(colorMe)
+```
 
 ## 🎭 Operating System Support
 
