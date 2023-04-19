@@ -1,4 +1,4 @@
-![github-banner](https://user-images.githubusercontent.com/96031819/229327991-15ff4ce6-11ef-48eb-bc64-c5e28b46e885.png)
+![github-banner](https://user-images.githubusercontent.com/96031819/232985479-1699bf81-7198-4172-b2a0-ecaba9cf0e64.png)
 ![donuts-are-good's followers](https://img.shields.io/github/followers/donuts-are-good?&color=555&style=for-the-badge&label=followers) ![donuts-are-good's stars](https://img.shields.io/github/stars/donuts-are-good?affiliations=OWNER%2CCOLLABORATOR&color=555&style=for-the-badge) ![donuts-are-good's visitors](https://komarev.com/ghpvc/?username=donuts-are-good&color=555555&style=for-the-badge&label=visitors)
 
 # 🌈 Colors
