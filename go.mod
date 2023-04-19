@@ -1,4 +1,4 @@
-module github.com/donuts-are-good/colors
+module github.com/donuts-are-good/colors/v3
 
 go 1.20
 
