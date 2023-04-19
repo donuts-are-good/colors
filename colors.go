@@ -86,3 +86,49 @@ func Hex(hexColor string) string {
 
 	return fmt.Sprintf("\033[38;2;%d;%d;%dm", r, g, b)
 }
+
+func HexGradient(startColor, endColor, input string) string {
+	if len(input) == 0 {
+		return ""
+	}
+
+	start := Hex(startColor)
+	end := Hex(endColor)
+
+	if start == "" || end == "" {
+		return input
+	}
+
+	r1, g1, b1 := hexToRGB(startColor)
+	r2, g2, b2 := hexToRGB(endColor)
+
+	length := len(input) - 1
+	gradient := ""
+
+	for i, char := range input {
+		factor := float64(i) / float64(length)
+		r := r1 + int(float64(r2-r1)*factor)
+		g := g1 + int(float64(g2-g1)*factor)
+		b := b1 + int(float64(b2-b1)*factor)
+
+		color := fmt.Sprintf("\033[38;2;%d;%d;%dm", r, g, b)
+		gradient += color + string(char)
+	}
+
+	gradient += NC
+	return gradient
+}
+
+func hexToRGB(hexColor string) (int, int, int) {
+	hexColor = strings.TrimPrefix(hexColor, "#")
+
+	if len(hexColor) == 3 {
+		hexColor = strings.Repeat(string(hexColor[0]), 2) + strings.Repeat(string(hexColor[1]), 2) + strings.Repeat(string(hexColor[2]), 2)
+	}
+
+	r, _ := strconv.ParseInt(hexColor[0:2], 16, 64)
+	g, _ := strconv.ParseInt(hexColor[2:4], 16, 64)
+	b, _ := strconv.ParseInt(hexColor[4:6], 16, 64)
+
+	return int(r), int(g), int(b)
+}
