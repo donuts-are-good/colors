@@ -5,6 +5,10 @@
 
 A delightful Go package to add a splash of color to your console applications! With support for 24-bit hex colors, and text formatting options like bold, italic, and underline, you can easily brighten up your text output and give it more pizzazz!
 
+## 📸 Screenshot 
+
+![image](https://github.com/donuts-are-good/colors/assets/96031819/e483f1e2-d6f4-4123-b8d5-71148d611068)
+
 ## 🥳 Example
 
 ```go 
