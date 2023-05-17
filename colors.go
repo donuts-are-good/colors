@@ -87,6 +87,35 @@ func Hex(hexColor string) string {
 	return fmt.Sprintf("\033[38;2;%d;%d;%dm", r, g, b)
 }
 
+func BGHex(hexColor string) string {
+	hexColor = strings.TrimPrefix(hexColor, "#")
+
+	if len(hexColor) != 3 && len(hexColor) != 6 {
+		return ""
+	}
+
+	if len(hexColor) == 3 {
+		hexColor = strings.Repeat(string(hexColor[0]), 2) + strings.Repeat(string(hexColor[1]), 2) + strings.Repeat(string(hexColor[2]), 2)
+	}
+
+	r, err := strconv.ParseInt(hexColor[0:2], 16, 64)
+	if err != nil {
+		return ""
+	}
+
+	g, err := strconv.ParseInt(hexColor[2:4], 16, 64)
+	if err != nil {
+		return ""
+	}
+
+	b, err := strconv.ParseInt(hexColor[4:6], 16, 64)
+	if err != nil {
+		return ""
+	}
+
+	return fmt.Sprintf("\033[48;2;%d;%d;%dm", r, g, b)
+}
+
 func HexGradient(startColor, endColor, input string) string {
 	if len(input) == 0 {
 		return ""
